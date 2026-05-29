@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<div class="bloque">
+
+    <h1>{{ bloque.titulo }}</h1>
+
+    <div class="concepto">
+        <h2>Concepto</h2>
+        <p>{{ bloque.concepto }}</p>
+    </div>
+
+    <div class="ejercicio">
+        <h2>{{ ejercicio1.titulo }}</h2>
+        <p>{{ ejercicio1.explicacion }}</p>
+        <pre>{{ ejercicio1.codigo }}</pre>
+    </div>
+
+    <div class="ejercicio">
+        <h2>{{ ejercicio2.titulo }}</h2>
+        <p>{{ ejercicio2.explicacion }}</p>
+        <pre>{{ ejercicio2.codigo }}</pre>
+
+        <div class="resultado">
+            <h3>Resultado</h3>
+            <pre>{{ ejercicio2.resultado }}</pre>
+        </div>
+    </div>
+
+    <div class="ejercicio">
+        <h2>{{ ejercicio3.titulo }}</h2>
+        <p>{{ ejercicio3.explicacion }}</p>
+    </div>
+
+</div>
+
+{% endblock %}

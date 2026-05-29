@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<div class="bloque">
+
+    <h1>{{ bloque.titulo }}</h1>
+    <!-- Imagen y nivel de dificultad — generado automáticamente por base.html -->
+    <img class="bloque-hero"
+         src="/static/img/img_html.png"
+         alt="Nivel">
+    <div class="dificultad-badge nivel-medio">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+        </svg>
+        Nivel Intermedio
+    </div><div class="concepto">
+
+        <h2>Concepto</h2>
+
+        <p>{{ bloque.concepto }}</p>
+
+    </div>
+
+    <div class="ejercicio">
+
+        <h2>{{ ejercicio1.titulo }}</h2>
+
+        <p>{{ ejercicio1.explicacion }}</p>
+
+        <pre>{{ ejercicio1.codigo }}</pre>
+
+        <div class="resultado">
+
+            <h3>Resultado</h3>
+
+            <pre>{{ ejercicio1.resultado }}</pre>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

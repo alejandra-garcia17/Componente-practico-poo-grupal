@@ -1,0 +1,109 @@
+/* ===================================================
+   MUSIC.CSS — Barra de música fija
+   =================================================== */
+
+.music-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: rgba(5, 8, 18, 0.97);
+    border-top: 1px solid #1e2d5a;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    z-index: 200;
+    backdrop-filter: blur(12px);
+}
+
+.music-label {
+    color: #3b82f6;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.5px;
+}
+
+.music-icon {
+    display: flex;
+    align-items: center;
+}
+
+.music-icon svg {
+    animation: pulse-icon 2s ease-in-out infinite;
+}
+
+@keyframes pulse-icon {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.15); }
+}
+
+.music-bar select {
+    background: #0f172a;
+    color: #94a3b8;
+    border: 1px solid #1e2d5a;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 0.78rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.music-bar select:focus {
+    border-color: #2563eb;
+}
+
+.btn-music {
+    background: rgba(37, 99, 235, 0.2);
+    color: #93c5fd;
+    border: 1px solid #1e3a8a;
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-music:hover {
+    background: rgba(37, 99, 235, 0.4);
+    color: white;
+}
+
+/* Botón Parar — oculto (Play/Pausa cubren la funcionalidad) */
+.btn-stop {
+    display: none;
+}
+
+.volume-wrap {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #334155;
+    font-size: 0.75rem;
+    margin-left: auto;
+}
+
+.volume-wrap input[type="range"] {
+    accent-color: #2563eb;
+    width: 70px;
+    cursor: pointer;
+    height: 3px;
+}
+
+.music-status {
+    font-size: 0.7rem;
+    color: #334155;
+    white-space: nowrap;
+}
+
+.music-status.playing {
+    color: #3b82f6;
+}

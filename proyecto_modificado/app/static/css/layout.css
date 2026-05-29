@@ -1,0 +1,193 @@
+/* ===================================================
+   LAYOUT.CSS — Estructura principal de la aplicación
+   =================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #0a0e1a;
+    color: #e2e8f0;
+    background-image: url("../img/bg_programacion.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    overflow: hidden; /* Toda la app dentro de la ventana */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 8, 18, 0.88);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ===== LAYOUT: columna izquierda fija + contenido scrollable ===== */
+
+.app-shell {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* ===== HEADER ===== */
+
+header {
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #0f1f5c 0%, #1a2f7a 100%);
+    color: white;
+    border-bottom: 2px solid #1e3a8a;
+    box-shadow: 0 2px 20px rgba(37, 99, 235, 0.35);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 14px 30px;
+}
+
+.header-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #3b82f6;
+    opacity: 0.9;
+}
+
+.header-inner h1 {
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+    color: #e0e7ff;
+}
+
+/* ===== CONTENEDOR PRINCIPAL (sidebar + contenido) ===== */
+
+.contenedor {
+    display: flex;
+    flex: 1;
+    overflow: hidden; /* Importante: los hijos manejan su propio scroll */
+}
+
+/* ===== SIDEBAR — scroll independiente ===== */
+
+.sidebar {
+    flex-shrink: 0;
+    width: 210px;
+    background: rgba(10, 14, 30, 0.95);
+    border-right: 1px solid #1e2d5a;
+    overflow-y: auto;      /* Scroll solo aquí */
+    overflow-x: hidden;
+    padding: 18px 14px 80px 14px; /* padding-bottom para que no quede bajo la barra de música */
+    backdrop-filter: blur(8px);
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+.sidebar::-webkit-scrollbar-thumb {
+    background: #1e3a8a;
+    border-radius: 4px;
+}
+
+.sidebar-title {
+    color: #475569;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0 4px 10px 4px;
+    border-bottom: 1px solid #1e2d5a;
+    margin-bottom: 10px;
+}
+
+/* Cada enlace del sidebar con icono SVG */
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 9px 10px;
+    margin-bottom: 2px;
+    border-radius: 7px;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    border-left: 2px solid transparent;
+}
+
+.sidebar a:hover {
+    background-color: rgba(37, 99, 235, 0.2);
+    color: #93c5fd;
+    border-left-color: #2563eb;
+}
+
+.sidebar a.active {
+    background-color: rgba(37, 99, 235, 0.25);
+    color: #60a5fa;
+    border-left-color: #3b82f6;
+}
+
+/* Icono SVG inline en el sidebar */
+.sidebar a svg {
+    flex-shrink: 0;
+    opacity: 0.7;
+}
+
+/* Badge de dificultad en el sidebar */
+.badge {
+    margin-left: auto;
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+.badge-easy   { background: rgba(22, 163, 74, 0.2);  color: #4ade80; }
+.badge-mid    { background: rgba(234, 179, 8, 0.2);  color: #fbbf24; }
+.badge-hard   { background: rgba(239, 68, 68, 0.2);  color: #f87171; }
+
+/* ===== CONTENIDO PRINCIPAL — scroll independiente ===== */
+
+.contenido {
+    flex: 1;
+    overflow-y: auto;      /* Solo este panel scrollea */
+    padding: 28px 32px 90px 32px; /* bottom para música */
+    background: transparent;
+}
+
+.contenido::-webkit-scrollbar {
+    width: 6px;
+}
+.contenido::-webkit-scrollbar-track {
+    background: transparent;
+}
+.contenido::-webkit-scrollbar-thumb {
+    background: #1e3a8a;
+    border-radius: 4px;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    flex-shrink: 0;
+    background: rgba(10, 14, 30, 0.95);
+    color: #334155;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.78rem;
+    border-top: 1px solid #1e2d5a;
+}

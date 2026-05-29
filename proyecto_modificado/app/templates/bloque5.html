@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<div class="bloque">
+
+    <h1>{{ bloque.titulo }}</h1>
+    <!-- Imagen y nivel de dificultad — generado automáticamente por base.html -->
+    <img class="bloque-hero"
+         src="/static/img/img_tech.png"
+         alt="Nivel">
+    <div class="dificultad-badge nivel-basico">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+        </svg>
+        Nivel Básico
+    </div><div class="concepto">
+
+        <h2>Concepto</h2>
+
+        <p>{{ bloque.concepto }}</p>
+
+    </div>
+
+    <div class="ejercicio">
+
+        <h2>{{ ejercicio1.titulo }}</h2>
+
+        <p>{{ ejercicio1.explicacion }}</p>
+
+        <pre>{{ ejercicio1.codigo }}</pre>
+
+        <div class="resultado">
+
+            <h3>Resultado</h3>
+
+            <pre>{{ ejercicio1.resultado }}</pre>
+
+        </div>
+
+    </div>
+
+    <div class="ejercicio">
+
+        <h2>{{ ejercicio2.titulo }}</h2>
+
+        <p>{{ ejercicio2.explicacion }}</p>
+
+        <pre>{{ ejercicio2.codigo }}</pre>
+
+        <div class="resultado">
+
+            <h3>Resultado</h3>
+
+            <pre>{{ ejercicio2.resultado }}</pre>
+
+        </div>
+
+    </div>
+
+    <div class="ejercicio">
+
+        <h2>{{ ejercicio3.titulo }}</h2>
+
+        <p>{{ ejercicio3.explicacion }}</p>
+
+        <pre>{{ ejercicio3.codigo }}</pre>
+
+        <div class="resultado">
+
+            <h3>Resultado</h3>
+
+            <pre>{{ ejercicio3.resultado }}</pre>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
